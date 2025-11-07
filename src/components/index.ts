@@ -1,0 +1,9 @@
+export { Navigation } from './Navigation';
+export { Hero } from './Hero';
+export { Services } from './Services';
+export { ServiceCard } from './ServiceCard';
+export { Expertise } from './Expertise';
+export { About } from './About';
+export { Contact } from './Contact';
+export { ContactChannel } from './ContactChannel';
+export { Footer } from './Footer';
