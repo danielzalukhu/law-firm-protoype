@@ -4,6 +4,9 @@ import {
   Services,
   Expertise,
   About,
+  Team,
+  Pricing,
+  Testimonials,
   Contact,
   Footer,
 } from './components';
@@ -32,6 +35,12 @@ function App() {
         fields={siteConfig.expertise.fields}
       />
 
+      <Team ceo={siteConfig.team.ceo} lawyers={siteConfig.team.lawyers} />
+
+      <Pricing plans={siteConfig.pricing} />
+
+      <Testimonials testimonials={siteConfig.testimonials} />
+
       <About
         title={siteConfig.about.title}
         paragraphs={siteConfig.about.paragraphs}
@@ -42,6 +51,7 @@ function App() {
         subtitle={siteConfig.contact.subtitle}
         channels={siteConfig.contact.channels}
         hours={siteConfig.contact.hours}
+        whatsappPhone={siteConfig.contact.whatsappPhone}
       />
 
       <Footer

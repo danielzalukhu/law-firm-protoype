@@ -84,9 +84,103 @@ export const siteConfig = {
       'Kami memahami bahwa setiap klien memiliki kebutuhan yang unik. Oleh karena itu, kami menyediakan layanan konsultasi yang personal dan solusi yang disesuaikan dengan situasi spesifik Anda. Kepercayaan dan kepuasan klien adalah prioritas utama kami.',
     ],
   },
+  team: {
+    ceo: {
+      name: 'Budi Prasetya, S.H., M.H.',
+      position: 'Founder & CEO',
+      vision: 'Dengan pengalaman lebih dari 20 tahun di industri hukum, Budi Prasetya memimpin Prasetya Legal dengan visi memberikan solusi hukum yang inovatif dan customer-centric. Beliau percaya bahwa kepercayaan klien adalah aset terbesar dalam bisnis konsultan hukum.',
+      photo: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
+    },
+    lawyers: [
+      {
+        name: 'Rina Wijaya, S.H.',
+        position: 'Lawyer - Corporate Law',
+        vision: 'Spesialis dalam hukum korporasi dengan track record yang impresif dalam M&A dan corporate restructuring. Rina berkomitmen untuk memastikan setiap transaksi korporasi berjalan dengan lancar dan sesuai regulasi.',
+        photo: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400',
+      },
+      {
+        name: 'Agus Gunawan, S.H., LL.M.',
+        position: 'Lawyer - Contract & Litigation',
+        vision: 'Expert dalam penyusunan kontrak bisnis dan penyelesaian sengketa. Agus memiliki pengalaman luas dalam litigasi dan arbitrase internasional serta domestic.',
+        photo: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400',
+      },
+      {
+        name: 'Siti Nurhaliza, S.H.',
+        position: 'Lawyer - Employment Law',
+        vision: 'Berdedikasi dalam menangani kasus-kasus ketenagakerjaan dan hubungan industrial. Siti memahami kompleksitas regulasi ketenagakerjaan Indonesia dan siap memberikan solusi terbaik.',
+        photo: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400',
+      },
+    ],
+  },
+  pricing: [
+    {
+      name: 'Paket Basic',
+      price: 'Rp 5.000.000',
+      description: 'Cocok untuk startup dan UMKM',
+      features: [
+        { text: 'Konsultasi legal awal gratis', included: true },
+        { text: 'Pendampingan pengurusan perizinan', included: true },
+        { text: 'Penyusunan kontrak sederhana', included: true },
+        { text: 'Email support', included: true },
+        { text: 'Akses 24/7 ke portal klien', included: false },
+        { text: 'Dedicated account manager', included: false },
+      ],
+    },
+    {
+      name: 'Paket Standard',
+      price: 'Rp 15.000.000',
+      description: 'Untuk perusahaan menengah',
+      highlighted: true,
+      features: [
+        { text: 'Konsultasi legal awal gratis', included: true },
+        { text: 'Pendampingan pengurusan perizinan', included: true },
+        { text: 'Penyusunan kontrak kompleks', included: true },
+        { text: 'Email & phone support', included: true },
+        { text: 'Akses 24/7 ke portal klien', included: true },
+        { text: 'Dedicated account manager', included: true },
+      ],
+    },
+    {
+      name: 'Paket Premium',
+      price: 'Rp 30.000.000',
+      description: 'Untuk korporasi dan enterprise',
+      features: [
+        { text: 'Konsultasi legal unlimited', included: true },
+        { text: 'Pendampingan pengurusan perizinan', included: true },
+        { text: 'Penyusunan kontrak unlimited', included: true },
+        { text: 'Email, phone & WhatsApp support', included: true },
+        { text: 'Akses 24/7 ke portal klien', included: true },
+        { text: 'Dedicated account manager + team', included: true },
+      ],
+    },
+  ],
+  testimonials: [
+    {
+      name: 'Hendra Kusuma',
+      company: 'PT Maju Jaya Indonesia',
+      content: 'Prasetya Legal sangat membantu kami dalam mengurus perizinan dan struktur perusahaan. Tim mereka profesional dan responsif terhadap setiap pertanyaan kami.',
+      rating: 5,
+      photo: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100',
+    },
+    {
+      name: 'Dini Setiawati',
+      company: 'CV Kreasi Bisnis',
+      content: 'Pelayanan yang luar biasa. Proses yang cepat dan hasilnya sesuai dengan ekspektasi kami. Highly recommended untuk semua bisnis!',
+      rating: 5,
+      photo: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100',
+    },
+    {
+      name: 'Rianto Dharma',
+      company: 'PT Teknologi Global',
+      content: 'Konsultasi dari Prasetya Legal membantu kami mengatasi masalah kontrak dengan supplier. Solusi mereka praktis dan efektif.',
+      rating: 5,
+      photo: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=100',
+    },
+  ],
   contact: {
     title: 'Hubungi Kami',
     subtitle: 'Konsultasi awal gratis untuk memahami kebutuhan hukum Anda',
+    whatsappPhone: '6281234567890',
     channels: [
       {
         title: 'Telepon',
@@ -111,7 +205,9 @@ export const siteConfig = {
   },
   navigation: [
     { label: 'Layanan', href: '#services' },
-    { label: 'Keahlian', href: '#expertise' },
+    { label: 'Tim Kami', href: '#team' },
+    { label: 'Harga', href: '#pricing' },
+    { label: 'Testimoni', href: '#testimonials' },
     { label: 'Tentang', href: '#about' },
     { label: 'Kontak', href: '#contact' },
   ],
