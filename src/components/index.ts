@@ -10,4 +10,5 @@ export { Testimonials } from './Testimonials';
 export { Contact } from './Contact';
 export { ContactChannel } from './ContactChannel';
 export { AppointmentModal } from './AppointmentModal';
+export { ScrollToTop } from './ScrollToTop';
 export { Footer } from './Footer';

@@ -14,15 +14,20 @@ interface ContactProps {
   channels: Channel[];
   hours: string;
   whatsappPhone?: string;
+  selectedPlan?: string | null;
 }
 
-export function Contact({ title, subtitle, channels, hours, whatsappPhone }: ContactProps) {
+export function Contact({ title, subtitle, channels, hours, whatsappPhone, selectedPlan }: ContactProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handlePhoneClick = (phone: string) => {
     if (whatsappPhone) {
-      const message = encodeURIComponent('Halo, saya ingin membuat appointment dengan Prasetya Legal.');
-      window.open(`https://wa.me/${whatsappPhone}?text=${message}`, '_blank');
+      let message = 'Halo, saya ingin membuat appointment dengan Prasetya Legal.';
+      if (selectedPlan) {
+        message += ` Saya tertarik dengan paket ${selectedPlan}.`;
+      }
+      const encodedMessage = encodeURIComponent(message);
+      window.open(`https://wa.me/${whatsappPhone}?text=${encodedMessage}`, '_blank');
     }
   };
 
@@ -53,6 +58,11 @@ export function Contact({ title, subtitle, channels, hours, whatsappPhone }: Con
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">{title}</h2>
             <p className="text-xl text-gray-300">{subtitle}</p>
+            {selectedPlan && (
+              <p className="text-amber-400 text-lg font-semibold mt-4">
+                Paket yang Anda pilih: <span className="text-white">{selectedPlan}</span>
+              </p>
+            )}
           </div>
           <div className="grid lg:grid-cols-3 gap-8">
             {updatedChannels.map((channel) => (
@@ -74,7 +84,7 @@ export function Contact({ title, subtitle, channels, hours, whatsappPhone }: Con
         </div>
       </section>
 
-      <AppointmentModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <AppointmentModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} selectedPlan={selectedPlan} />
     </>
   );
 }

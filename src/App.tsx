@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Navigation,
   Hero,
@@ -8,11 +9,21 @@ import {
   Pricing,
   Testimonials,
   Contact,
+  ScrollToTop,
   Footer,
 } from './components';
 import { siteConfig } from './config/siteConfig';
 
 function App() {
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+
+  const handlePlanSelect = (planName: string) => {
+    setSelectedPlan(planName);
+    setTimeout(() => {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation
@@ -37,7 +48,7 @@ function App() {
 
       <Team ceo={siteConfig.team.ceo} lawyers={siteConfig.team.lawyers} />
 
-      <Pricing plans={siteConfig.pricing} />
+      <Pricing plans={siteConfig.pricing} onPlanSelect={handlePlanSelect} />
 
       <Testimonials testimonials={siteConfig.testimonials} />
 
@@ -52,7 +63,10 @@ function App() {
         channels={siteConfig.contact.channels}
         hours={siteConfig.contact.hours}
         whatsappPhone={siteConfig.contact.whatsappPhone}
+        selectedPlan={selectedPlan}
       />
+
+      <ScrollToTop />
 
       <Footer
         brandName={siteConfig.brand.name}

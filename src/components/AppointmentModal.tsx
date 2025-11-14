@@ -5,9 +5,10 @@ import { supabase } from '../lib/supabaseClient';
 interface AppointmentModalProps {
   isOpen: boolean;
   onClose: () => void;
+  selectedPlan?: string | null;
 }
 
-export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
+export function AppointmentModal({ isOpen, onClose, selectedPlan }: AppointmentModalProps) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -30,6 +31,11 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
     setError('');
 
     try {
+      let finalDescription = formData.description;
+      if (selectedPlan) {
+        finalDescription += `\n\nPaket yang dipilih: ${selectedPlan}`;
+      }
+
       const { error: insertError } = await supabase
         .from('appointments')
         .insert([
@@ -38,7 +44,7 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
             email: formData.email,
             phone: formData.phone,
             address: formData.address,
-            description: formData.description,
+            description: finalDescription,
           },
         ]);
 
@@ -83,7 +89,16 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <>
+              {selectedPlan && (
+                <div className="mb-4 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                  <p className="text-sm text-gray-700">
+                    <span className="font-semibold text-amber-900">Paket dipilih:</span>
+                    <span className="text-amber-900 ml-2">{selectedPlan}</span>
+                  </p>
+                </div>
+              )}
+              <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
                   Nama Lengkap
@@ -168,7 +183,8 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
               >
                 {loading ? 'Mengirim...' : 'Kirim Appointment'}
               </button>
-            </form>
+              </form>
+            </>
           )}
         </div>
       </div>
