@@ -190,7 +190,7 @@ export const siteConfig = {
       {
         title: 'Email',
         icon: 'Mail',
-        items: ['info@prasetyalegal.co.id', 'konsultasi@prasetyalegal.co.id'],
+        items: ['info@bonapanggabean.co.id', 'konsultasi@prasetyalegal.co.id'],
       },
       {
         title: 'Alamat',
