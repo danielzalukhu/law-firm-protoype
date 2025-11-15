@@ -180,7 +180,7 @@ export const siteConfig = {
   contact: {
     title: 'Hubungi Kami',
     subtitle: 'Konsultasi awal gratis untuk memahami kebutuhan hukum Anda',
-    whatsappPhone: '6281234567890',
+    whatsappPhone: '6285157888978',
     channels: [
       {
         title: 'Telepon',
