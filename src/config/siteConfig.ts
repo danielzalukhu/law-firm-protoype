@@ -172,7 +172,7 @@ export const siteConfig = {
     {
       name: 'Rianto Dharma',
       company: 'PT Teknologi Global',
-      content: 'Konsultasi dari Prasetya Legal membantu kami mengatasi masalah kontrak dengan supplier. Solusi mereka praktis dan efektif.',
+      content: 'Konsultasi dari Bona Panggabean Legal membantu kami mengatasi masalah kontrak dengan supplier. Solusi mereka praktis dan efektif.',
       rating: 5,
       photo: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=100',
     },
