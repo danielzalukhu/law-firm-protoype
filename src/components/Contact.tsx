@@ -24,7 +24,7 @@ export function Contact({ title, subtitle, channels, hours, whatsappPhone, selec
 
   const handlePhoneClick = (phone: string) => {
     if (whatsappPhone) {
-      let message = 'Halo, saya ingin membuat appointment dengan Prasetya Legal.';
+      let message = 'Halo, saya ingin membuat appointment dengan Bona Panggabean Legal.';
       if (selectedPlan) {
         message += ` Saya tertarik dengan paket ${selectedPlan}.`;
       }
