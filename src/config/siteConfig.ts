@@ -201,7 +201,7 @@ export const siteConfig = {
     hours: 'Senin - Jumat: 09.00 - 18.00 WIB\nSabtu: 09.00 - 14.00 WIB',
   },
   footer: {
-    copyright: '2025 Prasetya Legal. Semua hak dilindungi undang-undang.',
+    copyright: '2025 Bona Panggabean Legal. Semua hak dilindungi undang-undang.',
   },
   navigation: [
     { label: 'Layanan', href: '#services' },
