@@ -1,6 +1,6 @@
 export const siteConfig = {
   brand: {
-    name: 'Prasetya Legal',
+    name: 'Bona Panggabean',
     tagline: 'Konsultan Hukum Terpercaya di Indonesia',
   },
   hero: {
