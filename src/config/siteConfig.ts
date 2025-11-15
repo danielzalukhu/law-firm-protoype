@@ -185,7 +185,7 @@ export const siteConfig = {
       {
         title: 'Telepon',
         icon: 'Phone',
-        items: ['+62 21 5567 8890', '+62 812 3456 7890'],
+        items: ['+62 21 5567 8890', '+62 851-5788-8978'],
       },
       {
         title: 'Email',
