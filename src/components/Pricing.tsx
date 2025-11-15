@@ -51,7 +51,7 @@ export function Pricing({ plans, onPlanSelect }: PricingProps) {
         <p className="text-gray-600 mb-6 text-sm">{plan.description}</p>
 
         <div className="mb-8">
-          <span className="text-7xl font-bold bg-gradient-to-r from-amber-600 to-amber-700 bg-clip-text text-transparent">{plan.price}</span>
+          <span className="text-xl font-bold bg-gradient-to-r from-amber-600 to-amber-700 bg-clip-text text-transparent">{plan.price}</span>
           <span className="text-gray-600 ml-2 text-sm font-medium">per bulan</span>
         </div>
 
