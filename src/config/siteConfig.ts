@@ -88,7 +88,7 @@ export const siteConfig = {
     ceo: {
       name: 'Bona Panggabean, S.H., M.H.',
       position: 'Founder & CEO',
-      vision: 'Dengan pengalaman lebih dari 20 tahun di industri hukum, Bona Panggabean memimpin Prasetya Legal dengan visi memberikan solusi hukum yang inovatif dan customer-centric. Beliau percaya bahwa kepercayaan klien adalah aset terbesar dalam bisnis konsultan hukum.',
+      vision: 'Dengan pengalaman lebih dari 20 tahun di industri hukum, Bona Panggabean memimpin dengan visi memberikan solusi hukum yang inovatif dan customer-centric. Beliau percaya bahwa kepercayaan klien adalah aset terbesar dalam bisnis konsultan hukum.',
       photo: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
     },
     lawyers: [
