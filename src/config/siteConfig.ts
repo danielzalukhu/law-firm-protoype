@@ -158,7 +158,7 @@ export const siteConfig = {
     {
       name: 'Hendra Kusuma',
       company: 'PT Maju Jaya Indonesia',
-      content: 'Prasetya Legal sangat membantu kami dalam mengurus perizinan dan struktur perusahaan. Tim mereka profesional dan responsif terhadap setiap pertanyaan kami.',
+      content: 'Bona Panggabean Legal sangat membantu kami dalam mengurus perizinan dan struktur perusahaan. Tim mereka profesional dan responsif terhadap setiap pertanyaan kami.',
       rating: 5,
       photo: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100',
     },
