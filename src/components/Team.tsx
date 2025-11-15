@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface TeamMember {
   name: string;
@@ -16,6 +17,7 @@ interface TeamProps {
 export function Team({ ceo, lawyers }: TeamProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const items = [ceo, ...lawyers];
+  const sectionRef = useScrollAnimation('animate-fade-in-up');
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? items.length - 1 : prevIndex - 1));
@@ -26,7 +28,7 @@ export function Team({ ceo, lawyers }: TeamProps) {
   };
 
   return (
-    <section className="py-20 px-6 lg:px-8 bg-white">
+    <section ref={sectionRef} className="py-20 px-6 lg:px-8 bg-white animate-fade-in-up">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Tim Profesional Kami</h2>

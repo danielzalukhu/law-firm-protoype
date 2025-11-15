@@ -1,4 +1,5 @@
 import { ChevronRight, Award, Users, FileText, CheckCircle } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface Stat {
   label: string;
@@ -19,8 +20,11 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export function Hero({ title, description, stats }: HeroProps) {
+  const sectionRef = useScrollAnimation('animate-fade-in-up');
+  const statsRef = useScrollAnimation('animate-scale-in');
+
   return (
-    <section className="pt-32 pb-20 px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
+    <section ref={sectionRef} className="pt-32 pb-20 px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white animate-fade-in-up">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -45,11 +49,11 @@ export function Hero({ title, description, stats }: HeroProps) {
               </a>
             </div>
           </div>
-          <div className="relative">
+          <div ref={statsRef} className="relative animate-scale-in">
             <div className="bg-gradient-to-br from-amber-100 to-amber-50 rounded-2xl p-8 shadow-2xl">
               <div className="grid grid-cols-2 gap-6">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="bg-white p-6 rounded-xl shadow-md">
+                {stats.map((stat, index) => (
+                  <div key={stat.label} className={`bg-white p-6 rounded-xl shadow-md animate-fade-in-up delay-${(index + 1) * 100}`}>
                     {iconMap.Award}
                     <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
                     <p className="text-gray-600 font-medium">{stat.label}</p>

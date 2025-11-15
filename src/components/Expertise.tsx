@@ -1,4 +1,5 @@
 import { CheckCircle, ChevronRight } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface Highlight {
   title: string;
@@ -13,8 +14,10 @@ interface ExpertiseProps {
 }
 
 export function Expertise({ title, description, highlights, fields }: ExpertiseProps) {
+  const sectionRef = useScrollAnimation('animate-fade-in-up');
+
   return (
-    <section id="expertise" className="py-20 px-6 lg:px-8 bg-gradient-to-br from-amber-50 to-white">
+    <section ref={sectionRef} id="expertise" className="py-20 px-6 lg:px-8 bg-gradient-to-br from-amber-50 to-white animate-fade-in-up">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>

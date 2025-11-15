@@ -1,6 +1,7 @@
 import { ContactChannel } from './ContactChannel';
 import { AppointmentModal } from './AppointmentModal';
 import { useState } from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface Channel {
   title: string;
@@ -19,6 +20,7 @@ interface ContactProps {
 
 export function Contact({ title, subtitle, channels, hours, whatsappPhone, selectedPlan }: ContactProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const sectionRef = useScrollAnimation('animate-fade-in-up');
 
   const handlePhoneClick = (phone: string) => {
     if (whatsappPhone) {
@@ -53,7 +55,7 @@ export function Contact({ title, subtitle, channels, hours, whatsappPhone, selec
 
   return (
     <>
-      <section id="contact" className="py-20 px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <section ref={sectionRef} id="contact" className="py-20 px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800 text-white animate-fade-in-up">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">{title}</h2>

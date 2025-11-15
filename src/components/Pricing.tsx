@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface PricingFeature {
   text: string;
@@ -21,6 +22,7 @@ interface PricingProps {
 
 export function Pricing({ plans, onPlanSelect }: PricingProps) {
   const [currentIndex, setCurrentIndex] = useState(1);
+  const sectionRef = useScrollAnimation('animate-fade-in-up');
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? plans.length - 1 : prevIndex - 1));
@@ -32,10 +34,10 @@ export function Pricing({ plans, onPlanSelect }: PricingProps) {
 
   const PricingCard = ({ plan }: { plan: PricingPlan }) => (
     <div
-      className={`rounded-2xl overflow-hidden transition-all duration-300 ${
+      className={`rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl ${
         plan.highlighted
           ? 'ring-2 ring-amber-600 shadow-2xl'
-          : 'bg-white shadow-lg'
+          : 'bg-white shadow-lg hover:ring-2 hover:ring-amber-400'
       } ${!plan.highlighted && 'bg-white'}`}
     >
       {plan.highlighted && (
@@ -49,16 +51,16 @@ export function Pricing({ plans, onPlanSelect }: PricingProps) {
         <p className="text-gray-600 mb-6 text-sm">{plan.description}</p>
 
         <div className="mb-8">
-          <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
-          <span className="text-gray-600 ml-2">per bulan</span>
+          <span className="text-7xl font-bold bg-gradient-to-r from-amber-600 to-amber-700 bg-clip-text text-transparent">{plan.price}</span>
+          <span className="text-gray-600 ml-2 text-sm font-medium">per bulan</span>
         </div>
 
         <button
           onClick={() => onPlanSelect?.(plan.name)}
-          className={`w-full py-3 rounded-lg font-semibold transition-all mb-8 text-center ${
+          className={`w-full py-3 rounded-lg font-semibold transition-all mb-8 text-center transform hover:scale-105 ${
             plan.highlighted
-              ? 'bg-amber-600 text-white hover:bg-amber-700'
-              : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+              ? 'bg-amber-600 text-white hover:bg-amber-700 shadow-lg hover:shadow-xl'
+              : 'bg-gray-100 text-gray-900 hover:bg-amber-100 hover:text-amber-900 border-2 border-transparent hover:border-amber-400'
           }`}
         >
           Pilih Paket
@@ -87,7 +89,7 @@ export function Pricing({ plans, onPlanSelect }: PricingProps) {
   );
 
   return (
-    <section id="pricing" className="py-20 px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
+    <section ref={sectionRef} id="pricing" className="py-20 px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white animate-fade-in-up">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Paket Harga</h2>

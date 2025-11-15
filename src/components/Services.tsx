@@ -1,4 +1,5 @@
 import { ServiceCard } from './ServiceCard';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface Service {
   title: string;
@@ -11,8 +12,10 @@ interface ServicesProps {
 }
 
 export function Services({ services }: ServicesProps) {
+  const sectionRef = useScrollAnimation('animate-fade-in-up');
+
   return (
-    <section id="services" className="py-20 px-6 lg:px-8 bg-white">
+    <section ref={sectionRef} id="services" className="py-20 px-6 lg:px-8 bg-white animate-fade-in-up">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Layanan Hukum Kami</h2>
@@ -21,13 +24,14 @@ export function Services({ services }: ServicesProps) {
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <ServiceCard
-              key={service.title}
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-            />
+          {services.map((service, index) => (
+            <div key={service.title} className={`animate-fade-in-up delay-${(index % 3 + 1) * 100}`}>
+              <ServiceCard
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+              />
+            </div>
           ))}
         </div>
       </div>
