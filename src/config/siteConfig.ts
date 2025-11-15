@@ -78,7 +78,7 @@ export const siteConfig = {
     ],
   },
   about: {
-    title: 'Tentang Prasetya Legal',
+    title: 'Tentang Bona Panggabean',
     paragraphs: [
       'Prasetya Legal adalah firma konsultan hukum yang berdiri sejak 2009, fokus pada memberikan solusi hukum berkualitas tinggi untuk perusahaan dan individu di seluruh Indonesia. Dengan tim yang berpengalaman dan berkomitmen, kami telah membantu ratusan klien dalam berbagai aspek hukum bisnis.',
       'Kami memahami bahwa setiap klien memiliki kebutuhan yang unik. Oleh karena itu, kami menyediakan layanan konsultasi yang personal dan solusi yang disesuaikan dengan situasi spesifik Anda. Kepercayaan dan kepuasan klien adalah prioritas utama kami.',
